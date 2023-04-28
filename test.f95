@@ -1,19 +1,24 @@
-program hello_world
+program array
+
 
     implicit none
  
-    real :: x
+    real,dimension(:),allocatable :: my_array
+    integer :: M,N,i
 
-    x = 13.
+    M = 100
+    allocate(my_array(M))
 
-    if ( x .eq. 12. ) then
-        write(*,*) x
-    else 
-        write(*,*) "not equal"
-    
-    end if
+
+    do i = 1, M 
+
+        my_array(i) = i
         
+    end do
 
 
-end program hello_world
+    write(*,*) my_array
+
+ 
+end program array
 
