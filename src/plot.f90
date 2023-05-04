@@ -54,6 +54,7 @@ module plot
    CALL COLOR('YELLOW')
    CALL CURVE(XRAY,Y2RAY,N)
    CALL DISFIN()
+   
   end subroutine EXA_1
 end module plot
 
