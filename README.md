@@ -1,4 +1,4 @@
 # fortran-streamlines
 
-# To compile run:git 
-# gfortran .\common\dislin.f90 plot.f90 main.f90 -o main.exe  .\lib\dislin\dismg.a -luser32 -lgdi32 -lopengl32
+# To compile run: make
+# Default make option is for windows. To compile on windows run "make linux"

@@ -27,7 +27,8 @@ DEBUG_FLAGS = -fbounds-check -fbacktrace -g
 DISLIN_FLAGS = -luser32 -lgdi32 -lopengl32
 
 # DISLIN Command 
-DISLIN_PATH = .\lib\dislin\dismg.a
+DISLIN_PATH = .\lib\dislin_win\dismg.a
+DISLIN_LINUX = -I ./lib/dislin_linux/gf -L ./lib/dislin_linux/ -ldislin
 
 # Program name
 PROGRAM = main.exe
@@ -36,6 +37,10 @@ PROGRAM = main.exe
 default:
 	$(COMPILER) $(FLAGS) -o $(PROGRAM) $(COMMON_PATHS) $(SRC_PATHS) $(MAIN_PATH) $(DISLIN_PATH) $(DISLIN_FLAGS)
 
+# Linux make
+linux:
+	$(COMPILER) $(FLAGS) -o $(PROGRAM) $(COMMON_PATHS) $(SRC_PATHS) $(MAIN_PATH) $(DISLIN_LINUX)
+	
 # Debug option
 debug:
 	$(COMPILER) $(FLAGS) $(DEBUG_FLAGS) -o $(PROGRAM) $(COMMON_PATHS) $(SRC_PATHS) $(MAIN_PATH) $(DISLIN_PATH) $(DISLIN_FLAGS)
